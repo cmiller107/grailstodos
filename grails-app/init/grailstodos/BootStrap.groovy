@@ -14,12 +14,13 @@ class BootStrap {
       def shopping = new Category(name: "Groceries").save()
 
       // Add an owner
-      def me = new Owner(name: "Heather").save()
+      def luis = new Owner(name: "Luis").save()
+      def chris = new Owner(name: "Chris").save()
+
 
       // Create tasks that belong to an owner and a category
-      new Task(name: "wash car", category: errands, owner: me).save()
-      new Task(name: "walk cats", category: chores, owner: me).save()
-      new Task(name: "buy milk", category: shopping, owner: me).save()
+      new Task(name: "buy wine", category: shopping, owner: luis).save()
+      new Task(name: "buy head cream", category: errands, owner: chris).save()
     }
 
     def destroy = {

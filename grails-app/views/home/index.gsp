@@ -9,17 +9,16 @@
 
 <div id="content" role="main">
     <section class="row colset-2-its">
-        <h1>Welcome to the Home of the To-Dos!</h1>
    </section>
 
    <section class="row colset-2-its">
-        <p>We manage ${ownerTotal} people's lists and there are ${taskTotal} tasks in the database.</p>
+        <br><p>We manage ${ownerTotal} people's to-do lists and there are ${taskTotal} tasks in the database.</p>
         <g:link controller="task" action="index" class="link-header">Tasks</g:link>
         <ul>
           <g:each in="${Task.list()}" var="thisTask">
-            <li>
+            <li class="emo">
               <g:link controller="task" action="show" id="${thisTask.id}">
-                ${thisTask.name} for ${thisTask.owner.name}
+                  ${thisTask.owner.name} - ${thisTask.name}
               </g:link>
             </li>
           </g:each>
@@ -28,7 +27,7 @@
         <g:link controller="owner" action="index" class="link-header">Owners</g:link>
         <ul>
           <g:each in="${Owner.list()}" var="thisOwner">
-            <li>
+            <li class="emo">
               <g:link controller="owner" action="show" id="${thisOwner.id}">
                 ${thisOwner.name}
               </g:link>
